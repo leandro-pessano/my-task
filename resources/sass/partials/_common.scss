@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    min-width: 320px;
+}
+
+.my-container {
+    margin: 0 auto;
+    width: calc(100% - 120px);
+    height: calc(100vh - 120px);
+    background: linear-gradient(90deg,$d-blue 50%, $d-white 50%);
+}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    background-color: $d-blue !important;
+    color: $d-white !important;
+    &:hover {
+        background-color: $l-blue !important;
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+#my-alert {
+    position: absolute;
+    left: 60px;
+    bottom: -10px;
+}
+
+@media screen and (max-width: 1023px) {
+    .my-container {
+    width: calc(100% - 20px) !important;
+    height: calc(100vh - 70px) !important;
+    }
+}

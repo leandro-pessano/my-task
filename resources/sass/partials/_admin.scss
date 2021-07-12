@@ -1,0 +1,173 @@
+.admin-main {
+    display: flex;
+    height: 100%;
+    .left-main, .right-main {
+        height: 100%;
+        width: 50%;
+    }
+    .left-main {
+        padding: 10px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-content: flex-start;
+        .box {
+            position: relative;
+            margin-bottom: 10px;
+            padding: 15px;
+            height: 100px;
+            width: calc(33% - 5px);
+            background-color: $d-white;
+            border-radius: 5px;
+            cursor: pointer;
+            -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5); 
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+            &:hover {
+                -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.6); 
+                box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.6);
+            }
+            &:not(:nth-child(3n)) {
+                margin-right: 10px;
+            }
+            form button#my-btn {
+                background-color: transparent !important;
+                border: transparent;
+                i {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    font-size: 20px;
+                    color: #cccccc;
+                    opacity: 0.7;
+                    &:hover {
+                    color: rgb(187, 66, 66);
+                    }
+                }
+            }
+            h4 {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        .box.add {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:hover i {
+                    color: $d-blue;
+                    opacity: 0.8;
+                }
+            i {
+                font-size: 60px;
+                color: #cccccc;
+            }
+        }
+        &::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background: $d-blue;
+        }
+        &::-webkit-scrollbar-thumb{
+            border-radius: 10px;
+            background: #cccccc;
+        }
+        &::-webkit-scrollbar-thumb:hover{
+            background: #cccccc;
+        }
+        &::-webkit-scrollbar-thumb:active{
+            background: #cccccc;
+        }
+    }
+    .right-main {
+        .right-up, .right-down {            
+            height: 50%;
+            width: 100%;
+        }
+        .right-up, .right-down {
+            &::-webkit-scrollbar {
+                width: 6px;
+                height: 6px;
+            }
+
+            &::-webkit-scrollbar-track {
+                border-radius: 10px;
+                background: $d-white;
+            }
+            &::-webkit-scrollbar-thumb{
+                border-radius: 10px;
+                background: $d-blue;
+            }
+            &::-webkit-scrollbar-thumb:hover{
+                background: $d-blue;
+            }
+            &::-webkit-scrollbar-thumb:active{
+                background: $d-blue;
+            }
+        }
+        .right-up {
+            overflow-y: scroll;
+            .task-info {
+                padding: 20px;
+                .id-ops {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .title-content {
+                    margin-top: 20px;
+                    word-wrap: break-word;
+                    h2 {
+                        text-align: center;
+                        font-weight: bold;
+                    }
+                    p {
+                        padding: 0 40px;
+                    }
+                }
+            }
+        }
+        .right-down {
+            padding: 20px;
+            overflow-y: scroll;
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .box {
+        width: calc(50% - 5px) !important;
+        margin-right: 10px !important;
+        &:nth-child(2n){
+            margin-right: 0 !important;
+        }
+    }
+    .title-content {
+        h2 {
+            font-size: 26px;
+        }
+        p {
+            padding: 0 20px !important;
+        }
+    }
+}
+
+@media screen and (max-width: 799px) {
+    .box {
+        width: 100% !important;
+        margin-right: 0 !important;
+    }
+    .title-content {
+        h2 {
+            font-size: 20px;
+        }
+        p {
+            padding: 0 !important;
+        }
+    }
+}
